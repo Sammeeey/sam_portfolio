@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Raleway&display=swap');
+
+:root {
+    --viewport-width: 60vw; /* make content broad 60% of the viewports width */
+    --max-content-width: 600px /* make content broad maximum 600px - to avoid really broad content on large screens */
+}
+
+body {
+    background-color: #f9f9f9;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f9f9f9 40px ), repeating-linear-gradient( #ffedba55, #ffedba );
+    /*background made with https://www.magicpattern.design/tools/css-backgrounds */
+
+    /* center content */
+    margin: auto;
+
+    /* align content around the center of the screen */
+    width: var(--viewport-width);
+    max-width: var(--max-content-width)
+}
+
+#image-me {
+    /* assign same width as body so that picture is always centered and adjusted to screen size */
+    width: var(--viewport-width);
+    max-width: var(--max-content-width);
+}
+
+main {
+    /* arrange main content below (vertically, not z-wise) navbar */
+    margin-top: 50px;
+    padding-top: 20px;
+
+    /* decrease padding to up to footer */
+    padding-bottom: 0px;
+}
+
+
+/* NAVIGATION BAR */
+nav ul {
+    /* default setup for navbar - to show list without bullet points (source: https://www.w3schools.com/css/css_navbar.asp) */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+    position: fixed; /* makes navigation bar sticky while scrolling */
+    top: 0; /* makes spacing between top of page and navigation bar 0 */
+    left: 0; /* makes spacing between top of page and navigation bar 0 */
+    width: 100%; /* makes navigation bar span the whole webpage horizontally */
+  }
+
+nav li {
+    float: left; /* make nav list links arrange on left site of the navbar */
+    /* 
+    border-right: 1px solid #bbb;   /* Add a gray right border to all list items, except the last item (last-child) */
+}
+
+/* nav li:last-child {
+    border-right: none; /* Don't add gray right border last item (last-child) *//*
+} */
+
+nav li:hover {
+    background-color: #111; /* make background color of navbar list elements black on mouse-over */
+  }
+
+nav li a {
+    font-family: 'Montserrat', sans-serif;
+
+    /* default navbar settings (source: https://www.w3schools.com/css/css_navbar.asp) */
+    display: block; /* make a elements block instead of inline */
+    padding: 14px 16px; /* adjust spacing around navbar links */
+    text-decoration: none; /* avoid default link styling (underline) */
+    font-weight: bold;
+    text-align: center;
+    color: white; /* change color from default blue link color */
+}
+
+nav li a:hover {
+    text-decoration: none;
+    color: greenyellow;
+}
+
+.active {
+    background-color: #FF9100; /* change background-color of first navbar item  */
+}
+
+.active:hover {
+    background-color: #ffa400; /* tint of .active link background-color */
+}
+
+
+
+h1,h2 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    line-height: 2.5em;
+    margin: 0 0 20px 0; 
+}
+
+
+/* FOOTER */
+footer {
+    margin-bottom: 90px;
+}
+
+.form-control {
+    flex-grow: 4;
+}
+
+/*
+TODO:
+DONE center content within certain area (width or max-width div?)
+DONE design form
+    broader - fitting content width
+    higher
+    email field
+        grey border
+    button
+        color: blue
+        no border
+
+ADDITIONS:
+DONE center #image-me
+*/
